@@ -1,0 +1,7 @@
+spring:
+  config:
+    import: configserver:http://localhost:9099
+  cloud:
+    config:
+      username: ${USERNAME}
+      password: ${PASSWORD}

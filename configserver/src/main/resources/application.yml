@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hayattarique/config-repo.git
+          username: hayattarique
+          password: ${GIT_ACCESS_TOKEN}
+          clone-on-start: true
+          refresh-rate: 120
+  security:
+    user:
+      name: hayat
+      password: Mobile@12
+
+server:
+  port: 9099
