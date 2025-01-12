@@ -5,7 +5,7 @@ RUN apt update -y && \
     apt install -y openjdk-17-jdk
 RUN mkdir -p /usr/app
 WORKDIR usr/app
-COPY target/distributor-network-1.0.jar .
+COPY target/distributornetwork-1.0.jar .
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
   CMD curl --fail http://localhost:8080/actuator/health || exit 1
