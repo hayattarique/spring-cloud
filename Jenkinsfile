@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        MODULES = ['configserver', 'distributornetwork', 'inventorymanagement']
+        MODULES = 'configserver,distributornetwork,inventorymanagement' // Comma-separated string
         VERSION = '1.0'
     }
     stages {
@@ -14,7 +14,10 @@ pipeline {
         stage('Building Images for Docker') {
             steps {
                 script {
-                    for (module in env.MODULES) {
+                    // Convert MODULES string to a list
+                    def modules = env.MODULES.split(',')
+                    
+                    for (module in modules) {
                         dir(module) {
                             def imageName = "${module}:${env.VERSION}"
                             echo "Building Docker image for module ${module} with name ${imageName}..."
