@@ -19,6 +19,7 @@ pipeline {
                     
                     for (module in modules) {
                         dir(module) {
+                            sh '''mvn clean package'''
                             def imageName = "${module}:${env.VERSION}"
                             echo "Building Docker image for module ${module} with name ${imageName}..."
                             // Build the Docker image
