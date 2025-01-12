@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.boot</groupId>
-    <artifactId>distributor-network</artifactId>
+    <artifactId>distributornetwork</artifactId>
     <version>1.0</version>
     <name>distributor-network</name>
     <description>distributor network</description>
